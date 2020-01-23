@@ -2,12 +2,21 @@
 let arrays = [[1, 2, 3], [4, 5], [6]];
 
 // Your code here.
+var mergedAray = arrays.flat();
+console.log(mergedAray);
 // → [1, 2, 3, 4, 5, 6]
 
 // Challenge 2. Your own loop
 // Your code here.
-
+// a value, a test function, an update function, and a body function
 loop(3, n => n > 0, n => n - 1, console.log);
+function loop(value,testFunction,update,bodyfunction){
+ var initial = value;
+ while(testFunction(initial)){
+   bodyfunction(initial);
+   initial = update(initial);
+ }
+}
 // → 3
 // → 2
 // → 1
@@ -15,6 +24,15 @@ loop(3, n => n > 0, n => n - 1, console.log);
 // Challenge 3. Everything
 function every(array, test) {
   // Your code here.
+  test = array.filter(val => {
+    return val<10;
+  });
+  if(array.length == test.length){
+    console.log("true");
+  }else {
+    console.log("flase");
+  }
+  console.log(test);
 }
 
 console.log(every([1, 3, 5], n => n < 10));
