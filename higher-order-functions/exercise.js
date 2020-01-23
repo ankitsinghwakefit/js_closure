@@ -87,7 +87,7 @@ function reduce(array, callback, initialValue) {
 //Extension 3
 function intersection(arrays) {
   var common = arrays.reduce(function(ary,value){
-    
+   
   },[])
 }
 
@@ -95,7 +95,9 @@ function intersection(arrays) {
 // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {}
+function union(arrays) {
+  var fullAry = arrays.flat();
+}
 
 // console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]

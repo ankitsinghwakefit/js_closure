@@ -11,12 +11,11 @@ console.log(mergedAray);
 // a value, a test function, an update function, and a body function
 loop(3, n => n > 0, n => n - 1, console.log);
 function loop(value,testFunction,update,bodyfunction){
-  {if(testFunction){
-    bodyfunction(value);
-  }else{
-    return false;
-  }-----------------------------------------------------error 
-}
+ var initial = value;
+ while(testFunction(initial)){
+   bodyfunction(initial);
+   initial = update(initial);
+ }
 }
 // → 3
 // → 2
